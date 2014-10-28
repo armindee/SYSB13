@@ -1,0 +1,14 @@
+package JDBCPackage;
+import java.sql.*;
+public class SQLServerJDBCTest {
+public static void main(String[ ] args) throws SQLException {
+try {
+DriverManager.registerDriver(new sun.jdbc.odbc.JdbcOdbcDriver());
+//Class.forName("sun.jdbc.odbc.JdbcOdbcDriver"); // också ok
+} catch(Exception e) {
+System.out.println("Kan inte hitta database driver class: " + e);
+} 
+Connection con = DriverManager.getConnection
+("JDBC:ODBC:MyServer;database=erdis;", "markus", "Z3nb00k");
+}
+}
